@@ -1,14 +1,22 @@
-# Unreleased
+<a id="0.19.0"></a>
+# [Bambi 0.19.0](https://github.com/bambinos/bambi/releases/tag/0.19.0) - 2026-07-12
 
-## New features
+## What's Changed
+* Parameter wise non centered by [@AlexanderFengler](https://github.com/AlexanderFengler) in [#983](https://github.com/bambinos/bambi/pull/983)
+* Remove private type aliases in interpret API by [@GStechschulte](https://github.com/GStechschulte) in [#989](https://github.com/bambinos/bambi/pull/989)
+* Fix PyMC NUTS sampler kwargs silent failure by [@GStechschulte](https://github.com/GStechschulte) in [#990](https://github.com/bambinos/bambi/pull/990)
+* Add compute_log_prior by [@aloctavodia](https://github.com/aloctavodia) in [#992](https://github.com/bambinos/bambi/pull/992)
+* Add example of sensitivity analysis by [@aloctavodia](https://github.com/aloctavodia) in [#993](https://github.com/bambinos/bambi/pull/993)
+* Add ExGaussian family by [@yogendrarau](https://github.com/yogendrarau) in [#997](https://github.com/bambinos/bambi/pull/997)
 
-* `bmb.Prior` accepts a `noncentered` keyword to override `Model.noncentered` per group-specific term.
-* `Model.noncentered` accepts a `dict` keyed by component name (e.g. `{"mu": True, "sigma": False}`).
+## New Contributors
+* [@AlexanderFengler](https://github.com/AlexanderFengler) made their first contribution in [#983](https://github.com/bambinos/bambi/pull/983)
+* [@yogendrarau](https://github.com/yogendrarau) made their first contribution in [#997](https://github.com/bambinos/bambi/pull/997)
 
-## Maintenance and fixes
+**Full Changelog**: https://github.com/bambinos/bambi/compare/0.18.0...0.19.0
 
-* Non-Normal priors with random hyperpriors now build under the centered parameterization.
-* `Model.fit` now warns when `nuts_sampler_kwargs` is passed while using the default PyMC sampler, steering users to pass NUTS settings such as `target_accept` directly. Routing them through `nuts_sampler_kwargs` is silently ignored on PyMC < 6 and deprecated on PyMC >= 6.
+[Changes][0.19.0]
+
 
 <a id="0.18.0"></a>
 # [Bambi 0.18.0](https://github.com/bambinos/bambi/releases/tag/0.18.0) - 2026-05-19
@@ -601,6 +609,7 @@ Release 0.0.5
 [Changes][0.0.5]
 
 
+[0.19.0]: https://github.com/bambinos/bambi/compare/0.18.0...0.19.0
 [0.18.0]: https://github.com/bambinos/bambi/compare/0.17.2...0.18.0
 [0.17.2]: https://github.com/bambinos/bambi/compare/0.17.1...0.17.2
 [0.17.1]: https://github.com/bambinos/bambi/compare/0.16.0...0.17.1
