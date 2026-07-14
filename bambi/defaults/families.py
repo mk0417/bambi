@@ -17,6 +17,7 @@ from bambi.families.univariate import (
     HurdlePoisson,
     NegativeBinomial,
     Laplace,
+    LogNormal,
     Poisson,
     StoppingRatio,
     StudentT,
@@ -136,6 +137,16 @@ BUILTIN_FAMILIES = {
         "link": {"mu": "inverse", "alpha": "log"},
         "family": Gamma,
         "default_priors": {"alpha": "HalfCauchy"},
+    },
+    "lognormal":{
+        "likelihood":{
+            "name":"LogNormal",
+            "params":["mu","sigma"],
+            "parent":"mu",
+        },
+        "link":{"mu":"identity","sigma":"log"},
+        "family":LogNormal,
+        "default_priors":{"sigma":"HalfNormal"},
     },
     "gaussian": {
         "likelihood": {
